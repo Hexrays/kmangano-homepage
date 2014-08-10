@@ -1,23 +1,29 @@
+
+@import 'utilities/hex';
+@import 'utilities/reset';
+
 html {
-    width: 100%;
-    height: 100%;
+    width  : 100%;
+    height : 100%;
 }
 
 body {
-    color: #000;
-    font-size: 12px;
-    line-height: 1.4;
-    font-family: Helvetica, Arial, sans-serif;
-    width: 100%;
-    height: 100%;
+    font-family : Helvetica, Arial, sans-serif;
+    font-size   : 12px;
+    line-height : 1.4;
+
+    width       : 100%;
+    height      : 100%;
+
+    color       : #000;
 }
 
 ul {
-    padding-left: 0;
+    padding-left : 0;
 }
 
 li {
-    list-style: none;
+    list-style : none;
 }
 
 /******************************************
@@ -25,14 +31,15 @@ li {
 /*******************************************/
 
 .container {
-     min-width: 400px;
-     /*max-width: 640px;*/
-     /*width: 94%;*/
-     width: 106%;
-     min-height: 400px;
-     margin: 0 0 0 -3%;
-     /*margin: 0 auto;*/
-     overflow: hidden;
+    /*margin    : 0 auto;*/
+    overflow    : hidden;
+    /*max-width : 640px;*/
+    /*width     : 94%;*/
+
+    width       : 106%;
+    min-width   : 400px;
+    min-height  : 400px;
+    margin      : 0 0 0 -3%;
 }
 
 /******************************************
@@ -40,102 +47,115 @@ li {
 /*******************************************/
 
 .km-ul {
-    margin: 0 auto;
-    text-align: center;
+    margin     : 0 auto;
+
+    text-align : center;
     /*padding-top: 50px;*/
 }
 
 .km-slogan {
-    display: inline;
-    padding-right: 0.3rem;
-    word-wrap: break-word;
-    letter-spacing: 1rem;
+    display        : inline;
+
+    padding-right  : .3rem;
+
+    letter-spacing : 1rem;
+    word-wrap      : break-word;
 }
 
 .km-p {
-    font-size: 5em;
-    line-height: 1;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-size      : 5em;
+    font-weight    : 800;
+    line-height    : 1;
+
+    text-transform : uppercase;
 }
 
 .km-katie {
-    /*color: #11ff00;*/
-    display: block;
+    /*color : #11ff00;*/
+    display : block;
 }
 
 .km-frame {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 50px solid white;
-    z-index: 100;
+    position : fixed;
+    z-index  : 100;
+    top      : 0;
+    right    : 0;
+    bottom   : 0;
+    left     : 0;
+
+    border   : 50px solid white;
 }
 
 .km-st {
-    display: inline-block;
-    position: relative;
+    position : relative;
+
+    display : inline-block;
 }
 
 .km-st::after {
-    border-bottom: 15px solid #11ff00;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 35%;
+    position      : absolute;
+    top           : 35%;
+    right         : 0;
+    left          : 0;
+
+    content       : '';
+
+    border-bottom : 15px solid #1f0;
 }
 
 .km-view-work {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin: -75px 0 0 -75px;
-    z-index: 1000;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    /*background-image: linear-gradient(to bottom right,#11ff00,#11ff00);*/
-    background-color: rgba(241,90,36,0.85);
-    /*background-color: rgba(17,255,0,0.92);*/
-    text-align: center;
+    position : fixed;
+    z-index  : 1000;
+    top      : 50%;
+    left     : 50%;
 
-    transition: all 0.10s ease-in;
+    width    : 150px;
+    height   : 150px;
+    margin   : -75px 0 0 -75px;
+
+    transition         : all .10s ease-in;
+    /*background-color : rgba(17,255,0,0.92);*/
+    text-align         : center;
+
+    border-radius      : 50%;
+    /*background-image : linear-gradient(to bottom right,#11ff00,#11ff00);*/
+    background-color   : rgba(241,90,36,.85);
 }
 
 .km-view-work-a {
-    position: relative;
-    /*top: 33px;*/
-
-    /*transition: color 0.25s ease-in;*/
+    position     : relative;
+    /*top        : 33px;*/
+    /*transition : color 0.25s ease-in;*/
 }
 
 .km-view-work-a:hover {
-    /*color: #11ff00;*/
+    /*color : #11ff00;*/
 }
 
 .km-view-work-a:hover .km-view-work {
-    /*background-image: linear-gradient(to bottom right,#11ff00,#f7e62d);*/
-    background-color: rgba(241,90,36,0.92);
-    /*background-color: rgba(17,255,0,1);*/
-    width: 180px;
-    height: 180px;
-    margin: -90px 0 0 -90px;
-    /*background-color: #1f0;*/
-    /*opacity: 1;*/
+    /*background-color : rgba(17,255,0,1);*/
+    width              : 180px;
+    height             : 180px;
+    margin             : -90px 0 0 -90px;
+    /*background-image : linear-gradient(to bottom right,#11ff00,#f7e62d);*/
+
+    background-color   : rgba(241,90,36,.92);
+    /*background-color : #1f0;*/
+    /*opacity          : 1;*/
 }
 
 .km-view-work-txt {
-    color: white;
-    font-size: 1.1rem;
-    text-decoration: none;
-    position: absolute;
-    top: 50%;
-    margin-top: -1.1rem;
-    text-align: center;
-    width: 100%;
-    letter-spacing: 0.3rem;
+    font-size       : 1.1rem;
 
+    position        : absolute;
+    top             : 50%;
+
+    width           : 100%;
+    margin-top      : -1.1rem;
+
+    text-align      : center;
+    text-decoration : none;
+    letter-spacing  : .3rem;
+
+    color           : white;
 }

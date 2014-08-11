@@ -2,20 +2,25 @@
 @import 'utilities/hex';
 @import 'utilities/reset';
 
+/******************************************
+/* CONSTANTS
+/*******************************************/
+
+$fonts: "aktiv-grotesk-std",sans-serif;
+
 html {
     width  : 100%;
     height : 100%;
 }
 
 body {
-    font-family : Helvetica, Arial, sans-serif;
+    font-family : $fonts;
     font-size   : 12px;
     line-height : 1.4;
-
     width       : 100%;
     height      : 100%;
-
     color       : #000;
+    overflow-x: hidden;
 }
 
 ul {
@@ -31,19 +36,80 @@ li {
 /*******************************************/
 
 .container {
-    /*margin    : 0 auto;*/
-    overflow    : hidden;
-    /*max-width : 640px;*/
-    /*width     : 94%;*/
-
     width       : 106%;
-    min-width   : 400px;
-    min-height  : 400px;
     margin      : 0 0 0 -3%;
+    font-size   : 3.8rem;
+    font-weight : 800;
+    line-height : 1;
+    letter-spacing : 0.8rem;
+
+    text-transform : uppercase;
+
+    transition: all 0.25s ease;
+
+    @include breakpoint(sm){
+        letter-spacing : 0.5rem;
+        font-size      : 2rem;
+    }
+
+    @include breakpoint(xs){
+        letter-spacing : 0.25rem;
+        font-size      : 1rem;
+        padding-bottom : 25px;
+    }
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* VIEW WORK BUTTON
+/*******************************************/
+.km-flex-holder {
+    @include size(100%);
+    @include position-fixed($top:0, $left:0, $z-index:100);
+
+    display                    : flex;
+    justify-content            : center;
+    align-content              : center;
+}
+
+
+.km-view-work {
+    // z-index  : 1000;
+    display         : flex;
+    justify-content : center;
+    width           : 150px;
+    height          : 150px;
+
+    transition         : all .10s ease-in;
+    text-align         : center;
+    border-radius      : 50%;
+    background-color   : rgba(17,255,0,.92);
+
+    &:hover {
+        width              : 180px;
+        height             : 180px;
+        background-color   : rgba(17,255,0,.92);
+    }
+}
+
+.km-view-work-a {
+    align-self      : center;
+    margin          : auto;
+    position        : relative;
+    text-decoration : none;
+}
+
+.km-view-work-txt {
+    position        : relative;
+    text-decoration : none;
+    letter-spacing  : .3rem;
+    color           : white;
+    align-self      : center;
+    font-size       : 1.1rem;
+}
+
+
+/******************************************
+/* SLOGANS
 /*******************************************/
 
 .km-ul {
@@ -55,19 +121,8 @@ li {
 
 .km-slogan {
     display        : inline;
-
     padding-right  : .3rem;
-
-    letter-spacing : 1rem;
     word-wrap      : break-word;
-}
-
-.km-p {
-    font-size      : 5em;
-    font-weight    : 800;
-    line-height    : 1;
-
-    text-transform : uppercase;
 }
 
 .km-katie {
@@ -75,20 +130,21 @@ li {
     display : block;
 }
 
-.km-frame {
-    position : fixed;
-    z-index  : 100;
-    top      : 0;
-    right    : 0;
-    bottom   : 0;
-    left     : 0;
+// .km-frame {
+//     position : fixed;
+//     z-index  : 100;
+//     top      : 0;
+//     right    : 0;
+//     bottom   : 0;
+//     left     : 0;
 
-    border   : 50px solid white;
-}
+//     border   : 50px solid white;
+// }
+
+
 
 .km-st {
     position : relative;
-
     display : inline-block;
 }
 
@@ -101,61 +157,8 @@ li {
     content       : '';
 
     border-bottom : 15px solid #1f0;
-}
 
-.km-view-work {
-    position : fixed;
-    z-index  : 1000;
-    top      : 50%;
-    left     : 50%;
-
-    width    : 150px;
-    height   : 150px;
-    margin   : -75px 0 0 -75px;
-
-    transition         : all .10s ease-in;
-    /*background-color : rgba(17,255,0,0.92);*/
-    text-align         : center;
-
-    border-radius      : 50%;
-    /*background-image : linear-gradient(to bottom right,#11ff00,#11ff00);*/
-    background-color   : rgba(241,90,36,.85);
-}
-
-.km-view-work-a {
-    position     : relative;
-    /*top        : 33px;*/
-    /*transition : color 0.25s ease-in;*/
-}
-
-.km-view-work-a:hover {
-    /*color : #11ff00;*/
-}
-
-.km-view-work-a:hover .km-view-work {
-    /*background-color : rgba(17,255,0,1);*/
-    width              : 180px;
-    height             : 180px;
-    margin             : -90px 0 0 -90px;
-    /*background-image : linear-gradient(to bottom right,#11ff00,#f7e62d);*/
-
-    background-color   : rgba(241,90,36,.92);
-    /*background-color : #1f0;*/
-    /*opacity          : 1;*/
-}
-
-.km-view-work-txt {
-    font-size       : 1.1rem;
-
-    position        : absolute;
-    top             : 50%;
-
-    width           : 100%;
-    margin-top      : -1.1rem;
-
-    text-align      : center;
-    text-decoration : none;
-    letter-spacing  : .3rem;
-
-    color           : white;
+    @include breakpoint(xs){
+        border-bottom : 5px solid #1f0;
+    }
 }

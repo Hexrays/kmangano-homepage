@@ -57,7 +57,7 @@
                 itemNumber, slogan, listItem;
 
             while(totalItems--) {
-                itemNumber = Math.floor(Math.random() * totalItems);
+                itemNumber = Math.floor(Math.random() * (totalItems + 1));
                 slogan     = this.free[itemNumber];
 
                 listItem   = this.createLi(slogan);
@@ -68,6 +68,7 @@
                 frag.appendChild(listItem);
             }
             this.el.appendChild(frag);
+            $('li').hyphenate('en-us');
             this.resetFree();
             this.setLast();
         },
@@ -82,7 +83,6 @@
                     self.destroyWaypoint();
                     self.makeList();
                 }
-
             },{
                 offset: '100%'
             });
@@ -112,7 +112,6 @@
 
     $(document).ready(function(){
         app.list.init();
-        $('li').hyphenate('en-us');
     });
 
 })();
